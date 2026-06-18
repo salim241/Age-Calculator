@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Age Calculator</string>
+    <string name="open_drawer">Open Navigation Drawer</string>
+    <string name="close_drawer">Close Navigation Drawer</string>
+    <string name="imageView">Hero Image</string>
+    <string name="textView"> Computer programming or coding is the composition \n of sequences of instructions, called \n programs, that computers can follow to \n perform tasks.[1][2] It involves designing and implementing \n algorithms, step-by-step specifications of procedures, by writing code in one or more programming languages. Programmers typically use high-level programming languages \n that are more easily intelligible to humans \n than machine code, which is directly executed by the central \n processing unit. Proficient programming \n usually requires expertise in several \n different subjects, including knowledge of the application domain, details of programming languages and generic code libraries, specialized algorithms, and \n formal logic.Computer programming or coding \n is the composition of sequences of instructions, \n called programs, that computers can follow \n to perform tasks.[1][2] It involves \n designing and implementing algorithms, \n step-by-step specifications of procedures, by \n writing code in one or more programming languages. \n Programmers typically use high-level programming \n languages that are more easily intelligible to \n humans than machine code, which is \n directly executed by the central processing unit \n. Proficient programming usually requires expertise \n in several different subjects, including \n knowledge of the application domain, \n details of programming languages and generic \n code libraries, specialized algorithms, \n and formal logic.Proficient programming \n usually requires expertise in several \n different subjects, including knowledge of the application domain, details of programming languages and generic code libraries, specialized algorithms, and \n formal logic.Computer programming or coding \n is the composition of sequences of instructions, \n called programs, that computers can follow \n to perform tasks.[1][2] It involves \n designing and implementing algorithms, \n step-by-step specifications of procedures, by \n writing code in one or more programming languages. \n Programmers typically use high-level programming \n languages that are more easily intelligible to \n humans than machine code, which is \n directly executed by the central processing unit \n. Proficient programming usually requires expertise \n in several different subjects, including \n knowledge of the application domain, \n details of programming languages and generic \n code libraries, specialized algorithms, \n and formal logic.
+
+    </string>
+    <string name="share">Share</string>
+    <string name="textview1">Date of birth</string>
+    <string name="textview2">Calculate till</string>
+    <string name="btnCalculate">Calculate Age</string>
+    <string name="dobcalendar1">Calendar Icon1</string>
+    <string name="dobcalendar2">Calendar Icon2</string>
+</resources>
