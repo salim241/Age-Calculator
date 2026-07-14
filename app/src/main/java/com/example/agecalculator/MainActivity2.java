@@ -2,6 +2,7 @@ package com.example.agecalculator;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
@@ -24,5 +25,9 @@ public class MainActivity2 extends AppCompatActivity {
 //        String name = intent.getStringExtra(MainActivity.EXTRA_NAME);
 //        editText.setText("Your DOB is : " + name);
 
+    }
+
+    public void calculateAgain(View view) {
+        finish();
     }
 }

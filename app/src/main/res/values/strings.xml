@@ -6,14 +6,44 @@
     <string name="open_drawer1">Open Navigation Drawer1</string>
     <string name="close_drawer1">Close Navigation Drawer1</string>
     <string name="imageView">Hero Image</string>
-    <string name="textView"> Computer programming or coding is the composition \n of sequences of instructions, called \n programs, that computers can follow to \n perform tasks.[1][2] It involves designing and implementing \n algorithms, step-by-step specifications of procedures, by writing code in one or more programming languages. Programmers typically use high-level programming languages \n that are more easily intelligible to humans \n than machine code, which is directly executed by the central \n processing unit. Proficient programming \n usually requires expertise in several \n different subjects, including knowledge of the application domain, details of programming languages and generic code libraries, specialized algorithms, and \n formal logic.Computer programming or coding \n is the composition of sequences of instructions, \n called programs, that computers can follow \n to perform tasks.[1][2] It involves \n designing and implementing algorithms, \n step-by-step specifications of procedures, by \n writing code in one or more programming languages. \n Programmers typically use high-level programming \n languages that are more easily intelligible to \n humans than machine code, which is \n directly executed by the central processing unit \n. Proficient programming usually requires expertise \n in several different subjects, including \n knowledge of the application domain, \n details of programming languages and generic \n code libraries, specialized algorithms, \n and formal logic.Proficient programming \n usually requires expertise in several \n different subjects, including knowledge of the application domain, details of programming languages and generic code libraries, specialized algorithms, and \n formal logic.Computer programming or coding \n is the composition of sequences of instructions, \n called programs, that computers can follow \n to perform tasks.[1][2] It involves \n designing and implementing algorithms, \n step-by-step specifications of procedures, by \n writing code in one or more programming languages. \n Programmers typically use high-level programming \n languages that are more easily intelligible to \n humans than machine code, which is \n directly executed by the central processing unit \n. Proficient programming usually requires expertise \n in several different subjects, including \n knowledge of the application domain, \n details of programming languages and generic \n code libraries, specialized algorithms, \n and formal logic.</string>
-    <string name="textView01"> Computer programming or coding is the composition \n of sequences of instructions, called \n programs, that computers can follow to \n perform tasks.[1][2] It involves designing and implementing \n algorithms, step-by-step specifications of procedures, by writing code in one or more programming languages. Programmers typically use high-level programming languages \n that are more easily intelligible to humans \n than machine code, which is directly executed by the central \n processing unit. Proficient programming \n usually requires expertise in several \n different subjects, including knowledge of the application domain, details of programming languages and generic code libraries, specialized algorithms, and \n formal logic.Computer programming or coding \n is the composition of sequences of instructions, \n called programs, that computers can follow \n to perform tasks.[1][2] It involves \n designing and implementing algorithms, \n step-by-step specifications of procedures, by \n writing code in one or more programming languages. \n Programmers typically use high-level programming \n languages that are more easily intelligible to \n humans than machine code, which is \n directly executed by the central processing unit \n. Proficient programming usually requires expertise \n in several different subjects, including \n knowledge of the application domain, \n details of programming languages and generic \n code libraries, specialized algorithms, \n and formal logic.Proficient programming \n usually requires expertise in several \n different subjects, including knowledge of the application domain, details of programming languages and generic code libraries, specialized algorithms, and \n formal logic.Computer programming or coding \n is the composition of sequences of instructions, \n called programs, that computers can follow \n to perform tasks.[1][2] It involves \n designing and implementing algorithms, \n step-by-step specifications of procedures, by \n writing code in one or more programming languages. \n Programmers typically use high-level programming \n languages that are more easily intelligible to \n humans than machine code, which is \n directly executed by the central processing unit \n. Proficient programming usually requires expertise \n in several different subjects, including \n knowledge of the application domain, \n details of programming languages and generic \n code libraries, specialized algorithms, \n and formal logic.
-    </string>
-    <string name="share1">Share</string>
+    <string name="share1">Share</string>\
+
+
+    <string name="ageTitle">Your Age Is</string>
+    <string name="ageInYears">21</string>
+    <string name="ageInMonths">10</string>
+    <string name="ageInDays">15</string>
+    <string name="ageText1">Years</string>
+    <string name="ageText2">Months</string>
+    <string name="ageText3">Days</string>
+
+
+    <string name="yearsLine">Total Years</string>
+    <string name="monthsLine">Total Months</string>
+    <string name="totalMonths">262</string>
+
+    <string name="weeksLine">Total Weeks</string>
+    <string name="totalWeeks">1148</string>
+
+    <string name="daysLine">Total Days</string>
+    <string name="totalDays">8038</string>
+
+    <string name="hoursLine">Total Hours</string>
+    <string name="totalHours">2934219</string>
+
+    <string name="minutesLine">Total Minutes</string>
+    <string name="totalMinutes">3298495757</string>
+
+    <string name="secondsLine">Total Seconds</string>
+    <string name="totalSeconds">327854928034089</string>
+
+
     <string name="share2">Share</string>
     <string name="textview1">Date of birth</string>
     <string name="textview2">Calculate till</string>
     <string name="btnCalculate">Calculate Age</string>
     <string name="dobcalendar1">Calendar Icon1</string>
     <string name="dobcalendar2">Calendar Icon2</string>
+    <string name="btnCalculateAgain">Calculate Again</string>
+        />
 </resources>
