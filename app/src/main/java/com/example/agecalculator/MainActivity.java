@@ -82,7 +82,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (item.getItemId() == R.id.action_share) {
-            // Your share code here
+            if (item.getItemId() == R.id.action_share) {
+                Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
+                return true;
+            }
             return true;
         }
 
