@@ -1,7 +1,9 @@
 package com.example.agecalculator;
+import com.google.android.material.navigation.NavigationView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.DatePickerDialog;
 import java.util.Calendar;
@@ -26,10 +28,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText dob;
-    private EditText currentDate;
-    ImageView DobCalendar;
-    ImageView currCalendar;
+    private EditText dob, currentDate;
+    ImageView DobCalendar, currCalendar;
     public static final String EXTRA_DOB = "package.com.example.agecalculator.extra.DOB";
 
     public static final String EXTRA_CURRENT_DATE = "package.com.example.agecalculator.extra.CURRENT_DATE";
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 //        getSupportActionBar().setTitle("");
 
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+        NavigationView navigationView = findViewById(R.id.navigationView1);
 
         ActionBarDrawerToggle toggle =
                 new ActionBarDrawerToggle(
@@ -69,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(item -> {
+
+            int id = item.getItemId();
+
+            if (id == R.id.nav_home) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+
+            return false;
+        });
+
         toggle.getDrawerArrowDrawable().setColor(
                 ContextCompat.getColor(this, R.color.iconColor)
         );
