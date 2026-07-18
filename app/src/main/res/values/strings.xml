@@ -41,7 +41,7 @@
     <string name="share2">Share</string>
     <string name="textview1">Date of birth</string>
     <string name="textview2">Calculate till</string>
-    <string name="btnCalculate">Calculate Age</string>
+    <string name="btnCalculate">Calculate My Age</string>
     <string name="dobcalendar1">Calendar Icon1</string>
     <string name="dobcalendar2">Calendar Icon2</string>
     <string name="btnCalculateAgain">Calculate Again</string>
