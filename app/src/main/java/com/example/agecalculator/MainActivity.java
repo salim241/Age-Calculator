@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText dob;
     private EditText currentDate;
+    ImageView DobCalendar;
+    ImageView currCalendar;
     public static final String EXTRA_DOB = "package.com.example.agecalculator.extra.DOB";
 
     public static final String EXTRA_CURRENT_DATE = "package.com.example.agecalculator.extra.CURRENT_DATE";
@@ -38,9 +41,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         dob = findViewById(R.id.etdob);
         currentDate = findViewById(R.id.etcurrdate);
+        DobCalendar = findViewById(R.id.DobCalendar);
+        currCalendar = findViewById(R.id.currCalendar);
         setTodayDate();
         dob.setOnClickListener(v -> showDatePicker());
         currentDate.setOnClickListener(v -> showCurrentDatePicker());
+        DobCalendar.setOnClickListener(v -> showDatePicker());
+        currCalendar.setOnClickListener(v -> showCurrentDatePicker());
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
