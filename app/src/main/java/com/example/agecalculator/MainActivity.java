@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.action_share) {
             if (item.getItemId() == R.id.action_share) {
-                Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Share feature coming soon!", Toast.LENGTH_SHORT).show();
                 return true;
             }
             return true;
