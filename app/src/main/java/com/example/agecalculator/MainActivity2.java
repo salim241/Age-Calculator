@@ -161,6 +161,18 @@ public class MainActivity2 extends AppCompatActivity {
         Animation heroAnimation =
                 AnimationUtils.loadAnimation(this, R.anim.hero_card_enter);
 
+        heroCard.setAlpha(0f);
+        heroCard.setTranslationY(40);
+
+        breakdownCard.setAlpha(0f);
+        breakdownCard.setTranslationY(40);
+
+        totalAgeCard.setAlpha(0f);
+        totalAgeCard.setTranslationY(40);
+
+        nextBirthdayCard.setAlpha(0f);
+        nextBirthdayCard.setTranslationY(40);
+
         heroCard.startAnimation(heroAnimation);
 
         heroCard.animate()
