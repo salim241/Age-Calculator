@@ -41,7 +41,12 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView txtTotalSeconds;
     private TextView txtNextBirthdayDate;
     private TextView txtBirthdayCountdown;
+
+    // Animatio variables
     private MaterialCardView heroCard;
+    private MaterialCardView breakdownCard;
+    private MaterialCardView totalAgeCard;
+    private MaterialCardView nextBirthdayCard;
 
 
     @Override
@@ -97,7 +102,18 @@ public class MainActivity2 extends AppCompatActivity {
         txtDays = findViewById(R.id.txtDays);
         txtNextBirthdayDate = findViewById(R.id.txtNextBirthdayDate);
         txtBirthdayCountdown = findViewById(R.id.txtBirthdayCountdown);
+
+//        Animation
         heroCard = findViewById(R.id.heroCard);
+        heroCard = findViewById(R.id.heroCard);
+        breakdownCard = findViewById(R.id.breakdownCard);
+        totalAgeCard = findViewById(R.id.totalAgeCard);
+        nextBirthdayCard = findViewById(R.id.nextBirthdayCard);
+        heroCard.setAlpha(0f);
+        breakdownCard.setAlpha(0f);
+        totalAgeCard.setAlpha(0f);
+        nextBirthdayCard.setAlpha(0f);
+
 
         txtYears.setText(String.valueOf(age.getYears()));
         txtMonths.setText(String.valueOf(age.getMonths()));
@@ -146,6 +162,39 @@ public class MainActivity2 extends AppCompatActivity {
                 AnimationUtils.loadAnimation(this, R.anim.hero_card_enter);
 
         heroCard.startAnimation(heroAnimation);
+
+        heroCard.animate()
+                .alpha(1f)
+                .translationY(0)
+                .setDuration(500)
+                .start();
+
+        breakdownCard.setTranslationY(40);
+
+        breakdownCard.animate()
+                .alpha(1f)
+                .translationY(0)
+                .setStartDelay(150)
+                .setDuration(500)
+                .start();
+
+        totalAgeCard.setTranslationY(40);
+
+        totalAgeCard.animate()
+                .alpha(1f)
+                .translationY(0)
+                .setStartDelay(300)
+                .setDuration(500)
+                .start();
+
+        nextBirthdayCard.setTranslationY(40);
+
+        nextBirthdayCard.animate()
+                .alpha(1f)
+                .translationY(0)
+                .setStartDelay(450)
+                .setDuration(500)
+                .start();
     }
 
     @Override
