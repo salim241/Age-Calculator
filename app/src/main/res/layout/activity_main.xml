@@ -22,7 +22,7 @@
         android:layout_height="64dp"
         android:background="@android:color/transparent"
         android:elevation="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
 
         android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"

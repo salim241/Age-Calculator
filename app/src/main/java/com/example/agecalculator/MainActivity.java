@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         currentDate.setOnClickListener(v -> showCurrentDatePicker());
         DobCalendar.setOnClickListener(v -> showDatePicker());
         currCalendar.setOnClickListener(v -> showCurrentDatePicker());
+
+
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
-//        toolbar.inflateMenu(R.menu.toolbar_menu);
-//        getSupportActionBar().setTitle("");
 
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         NavigationView navigationView = findViewById(R.id.navigationView1);

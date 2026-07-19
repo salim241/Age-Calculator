@@ -6,13 +6,17 @@ import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -38,9 +42,17 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
-        Intent intent = getIntent();
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+
+        Intent intent = getIntent();
         String dob = intent.getStringExtra(MainActivity.EXTRA_DOB);
         String currentDate = intent.getStringExtra(MainActivity.EXTRA_CURRENT_DATE);
 
@@ -99,8 +111,8 @@ public class MainActivity2 extends AppCompatActivity {
         txtHeroYears.setText(String.valueOf(age.getYears()));
 
         txtHeroSummary.setText(
-                age.getYears() + " years, "
-                        + age.getMonths() + " months and "
+                age.getYears() + " years • "
+                        + age.getMonths() + " months •"
                         + age.getDays() + " days"
         );
 
@@ -124,6 +136,28 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+
+        if (item.getItemId() == R.id.action_share) {
+
+            Toast.makeText(this, "Share feature coming soon!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     public void calculateAgain(View view) {
         finish();
     }
