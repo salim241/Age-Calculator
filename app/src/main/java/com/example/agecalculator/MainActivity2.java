@@ -19,10 +19,20 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    private TextView AgeYears, AgeMonths, AgeDays;
-    private TextView AgeTotalYears, AgeTotalMonths, AgeTotalWeeks;
-    private TextView AgeTotalDays, AgeTotalHours;
-    private TextView AgeTotalMinutes, AgeTotalSeconds;
+    private TextView txtHeroTitle;
+    private TextView txtHeroYears;
+    private TextView txtHeroSummary;
+    private TextView txtYears;
+    private TextView txtMonths;
+    private TextView txtDays;
+    private TextView txtTotalMonths;
+    private TextView txtTotalWeeks;
+    private TextView txtTotalDays;
+    private TextView txtTotalHours;
+    private TextView txtTotalMinutes;
+    private TextView txtTotalSeconds;
+    private TextView txtNextBirthdayDate;
+    private TextView txtBirthdayCountdown;
 
 
     @Override
@@ -40,6 +50,18 @@ public class MainActivity2 extends AppCompatActivity {
 
         LocalDate today = LocalDate.parse(currentDate, formatter);
 
+        LocalDate nextBirthday = birthDate.withYear(today.getYear());
+
+        if (nextBirthday.isBefore(today)) {
+            nextBirthday = nextBirthday.plusYears(1);
+        }
+
+        long daysRemaining = ChronoUnit.DAYS.between(today, nextBirthday);
+
+        DateTimeFormatter birthdayFormatter =
+                DateTimeFormatter.ofPattern("dd MMMM yyyy");
+
+
         Period age = Period.between(birthDate, today);
 
         long totalMonths = ChronoUnit.MONTHS.between(birthDate, today);
@@ -50,29 +72,56 @@ public class MainActivity2 extends AppCompatActivity {
         long totalMinutes = totalHours * 60;
         long totalSeconds = totalMinutes * 60;
 
-        AgeYears = findViewById(R.id.AgeYears);
-        AgeMonths = findViewById(R.id.AgeMonths);
-        AgeDays = findViewById(R.id.AgeDays);
+        txtHeroTitle = findViewById(R.id.txtHeroTitle);
+        txtHeroYears = findViewById(R.id.txtHeroYears);
+        txtHeroSummary = findViewById(R.id.txtHeroSummary);
+        txtYears = findViewById(R.id.txtYears);
+        txtMonths = findViewById(R.id.txtMonths);
+        txtDays = findViewById(R.id.txtDays);
+        txtNextBirthdayDate = findViewById(R.id.txtNextBirthdayDate);
+        txtBirthdayCountdown = findViewById(R.id.txtBirthdayCountdown);
 
-        AgeTotalYears = findViewById(R.id.AgeTotalYears);
-        AgeTotalMonths = findViewById(R.id.AgeTotalMonths);
-        AgeTotalWeeks = findViewById(R.id.AgeTotalWeeks);
-        AgeTotalDays = findViewById(R.id.AgeTotalDays);
-        AgeTotalHours = findViewById(R.id.AgeTotalHours);
-        AgeTotalMinutes = findViewById(R.id.AgeTotalMinutes);
-        AgeTotalSeconds = findViewById(R.id.AgeTotalSeconds);
+        txtYears.setText(String.valueOf(age.getYears()));
+        txtMonths.setText(String.valueOf(age.getMonths()));
+        txtDays.setText(String.valueOf(age.getDays()));
 
-        AgeYears.setText(String.valueOf(age.getYears()));
-        AgeMonths.setText(String.valueOf(age.getMonths()));
-        AgeDays.setText(String.valueOf(age.getDays()));
 
-        AgeTotalYears.setText(String.valueOf(age.getYears()));
-        AgeTotalMonths.setText(String.valueOf(totalMonths));
-        AgeTotalWeeks.setText(String.valueOf(totalWeeks));
-        AgeTotalDays.setText(String.valueOf(totalDays));
-        AgeTotalHours.setText(String.valueOf(totalHours));
-        AgeTotalMinutes.setText(String.valueOf(totalMinutes));
-        AgeTotalSeconds.setText(String.valueOf(totalSeconds));
+        txtTotalMonths = findViewById(R.id.txtTotalMonths);
+        txtTotalWeeks = findViewById(R.id.txtTotalWeeks);
+        txtTotalDays = findViewById(R.id.txtTotalDays);
+        txtTotalHours = findViewById(R.id.txtTotalHours);
+        txtTotalMinutes = findViewById(R.id.txtTotalMinutes);
+        txtTotalSeconds = findViewById(R.id.txtTotalSeconds);
+
+
+        txtHeroTitle.setText("Your Age");
+
+        txtHeroYears.setText(String.valueOf(age.getYears()));
+
+        txtHeroSummary.setText(
+                age.getYears() + " years, "
+                        + age.getMonths() + " months and "
+                        + age.getDays() + " days"
+        );
+
+        txtTotalMonths.setText(String.format("%,d", totalMonths));
+        txtTotalWeeks.setText(String.format("%,d", totalWeeks));
+        txtTotalDays.setText(String.format("%,d", totalDays));
+        txtTotalHours.setText(String.format("%,d", totalHours));
+        txtTotalMinutes.setText(String.format("%,d", totalMinutes));
+        txtTotalSeconds.setText(String.format("%,d", totalSeconds));
+
+        txtNextBirthdayDate.setText(
+                nextBirthday.format(birthdayFormatter)
+        );
+
+        if (daysRemaining == 0) {
+            txtBirthdayCountdown.setText("🎉 Happy Birthday!");
+        } else if (daysRemaining == 1) {
+            txtBirthdayCountdown.setText("1 day remaining");
+        } else {
+            txtBirthdayCountdown.setText(daysRemaining + " days remaining");
+        }
     }
 
     public void calculateAgain(View view) {

@@ -13,14 +13,14 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#003F88"
+        android:background="@color/background"
         tools:context=".MainActivity" >
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
-            android:background="#003F88"
+            android:background="@color/background"
             android:elevation="10dp"
             android:layout_marginTop="50dp"
 
@@ -63,118 +63,71 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:id="@+id/AgeTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/ageTitle"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:textSize="24sp" />
-
-                <!-- Age Result -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-
-                    android:orientation="horizontal">
-
-                    <!-- Years -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/AgeYears"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ageInYears"
-                            android:textColor="@android:color/white"
-                            android:textSize="36sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ageText1"
-                            android:textColor="#BFD7FF"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                    <Space
-                        android:layout_width="28dp"
-                        android:layout_height="1dp" />
-
-                    <!-- Months -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/AgeMonths"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ageInMonths"
-                            android:textColor="@android:color/white"
-                            android:textSize="36sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ageText2"
-                            android:textColor="#BFD7FF"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                    <Space
-                        android:layout_width="28dp"
-                        android:layout_height="1dp" />
-
-                    <!-- Days -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/AgeDays"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ageInDays"
-                            android:textColor="@android:color/white"
-                            android:textSize="36sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ageText3"
-                            android:textColor="#BFD7FF"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/resultCard"
+                    android:id="@+id/heroCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="24dp">
+
+                        <TextView
+                            android:id="@+id/txtHeroTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Age"
+                            android:textColor="@color/textPrimary"
+                            android:textStyle="bold"
+                            android:textSize="22sp"/>
+
+                        <TextView
+                            android:id="@+id/txtHeroYears"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:text="21"
+                            android:textColor="@color/primary"
+                            android:textSize="60sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/txtHeroYearsLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="YEARS"
+                            android:textColor="@color/textSecondary"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txtHeroSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center"
+                            android:text="21 years, 8 months and 17 days"
+                            android:textColor="@color/textSecondary"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/breakdownCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="8dp">
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -182,7 +135,19 @@
                         android:orientation="vertical"
                         android:padding="20dp">
 
-                        <!-- Total Years -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📅 Age Breakdown"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textPrimary"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"/>
+
+                        <!-- Years -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -192,26 +157,113 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/yearsLine"
-                                android:textColor="#444444"
-                                android:textSize="16sp"/>
+                                android:text="Years"
+                                android:textSize="16sp"
+                                android:textColor="@color/textSecondary"/>
 
                             <TextView
-                                android:id="@+id/AgeTotalYears"
+                                android:id="@+id/txtYears"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/ageInYears"
+                                android:text="21"
                                 android:textStyle="bold"
-                                android:textColor="#000000"
-                                android:textSize="16sp"/>
+                                android:textSize="16sp"
+                                android:textColor="@color/textPrimary"/>
+
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:background="#E0E0E0"/>
+                            android:layout_marginVertical="12dp"
+                            android:background="#E5E7EB"/>
+
+                        <!-- Months -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Months"
+                                android:textSize="16sp"
+                                android:textColor="@color/textSecondary"/>
+
+                            <TextView
+                                android:id="@+id/txtMonths"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="8"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/textPrimary"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="12dp"
+                            android:background="#E5E7EB"/>
+
+                        <!-- Days -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Days"
+                                android:textSize="16sp"
+                                android:textColor="@color/textSecondary"/>
+
+                            <TextView
+                                android:id="@+id/txtDays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="17"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/textPrimary"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/totalAgeCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⏳ Total Age"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"/>
 
                         <!-- Total Months -->
                         <LinearLayout
@@ -223,26 +275,22 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/monthsLine"
-                                android:textColor="#444444"
-                                android:textSize="16sp"/>
+                                android:text="Months"
+                                android:textColor="@color/textSecondary"/>
 
                             <TextView
-                                android:id="@+id/AgeTotalMonths"
+                                android:id="@+id/txtTotalMonths"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/totalMonths"
-                                android:textStyle="bold"
-                                android:textColor="#000000"
-                                android:textSize="16sp"/>
+                                android:text="0"
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:background="#E0E0E0"/>
+                            android:layout_marginVertical="12dp"
+                            android:background="#E5E7EB"/>
 
                         <!-- Total Weeks -->
                         <LinearLayout
@@ -254,26 +302,22 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/weeksLine"
-                                android:textColor="#444444"
-                                android:textSize="16sp"/>
+                                android:text="Weeks"
+                                android:textColor="@color/textSecondary"/>
 
                             <TextView
-                                android:id="@+id/AgeTotalWeeks"
+                                android:id="@+id/txtTotalWeeks"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/totalWeeks"
-                                android:textStyle="bold"
-                                android:textColor="#000000"
-                                android:textSize="16sp"/>
+                                android:text="0"
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:background="#E0E0E0"/>
+                            android:layout_marginVertical="12dp"
+                            android:background="#E5E7EB"/>
 
                         <!-- Total Days -->
                         <LinearLayout
@@ -285,26 +329,22 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/daysLine"
-                                android:textColor="#444444"
-                                android:textSize="16sp"/>
+                                android:text="Days"
+                                android:textColor="@color/textSecondary"/>
 
                             <TextView
-                                android:id="@+id/AgeTotalDays"
+                                android:id="@+id/txtTotalDays"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/totalDays"
-                                android:textStyle="bold"
-                                android:textColor="#000000"
-                                android:textSize="16sp"/>
+                                android:text="0"
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:background="#E0E0E0"/>
+                            android:layout_marginVertical="12dp"
+                            android:background="#E5E7EB"/>
 
                         <!-- Total Hours -->
                         <LinearLayout
@@ -316,26 +356,22 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/hoursLine"
-                                android:textColor="#444444"
-                                android:textSize="16sp"/>
+                                android:text="Hours"
+                                android:textColor="@color/textSecondary"/>
 
                             <TextView
-                                android:id="@+id/AgeTotalHours"
+                                android:id="@+id/txtTotalHours"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/totalHours"
-                                android:textStyle="bold"
-                                android:textColor="#000000"
-                                android:textSize="16sp"/>
+                                android:text="0"
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:background="#E0E0E0"/>
+                            android:layout_marginVertical="12dp"
+                            android:background="#E5E7EB"/>
 
                         <!-- Total Minutes -->
                         <LinearLayout
@@ -347,26 +383,22 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/minutesLine"
-                                android:textColor="#444444"
-                                android:textSize="16sp"/>
+                                android:text="Minutes"
+                                android:textColor="@color/textSecondary"/>
 
                             <TextView
-                                android:id="@+id/AgeTotalMinutes"
+                                android:id="@+id/txtTotalMinutes"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/totalMinutes"
-                                android:textStyle="bold"
-                                android:textColor="#000000"
-                                android:textSize="16sp"/>
+                                android:text="0"
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:background="#E0E0E0"/>
+                            android:layout_marginVertical="12dp"
+                            android:background="#E5E7EB"/>
 
                         <!-- Total Seconds -->
                         <LinearLayout
@@ -378,47 +410,80 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/secondsLine"
-                                android:textColor="#444444"
-                                android:textSize="16sp"/>
+                                android:text="Seconds"
+                                android:textColor="@color/textSecondary"/>
 
                             <TextView
-                                android:id="@+id/AgeTotalSeconds"
+                                android:id="@+id/txtTotalSeconds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/totalSeconds"
-                                android:textStyle="bold"
-                                android:textColor="#000000"
-                                android:textSize="16sp"/>
+                                android:text="0"
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnCalculateAgain"
-                    android:layout_width="200dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="25dp"
-                    android:text="@string/btnCalculateAgain"
-                    android:onClick="calculateAgain"
-                    android:textAllCaps="false"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:backgroundTint="#FDD631"
-                    app:cornerRadius="40dp" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/nextBirthdayCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🎂 Next Birthday"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/textPrimary"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"/>
+
+                        <TextView
+                            android:id="@+id/txtNextBirthdayDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30 August 2026"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/primary"/>
+
+                        <TextView
+                            android:id="@+id/txtBirthdayCountdown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="42 days remaining"
+                            android:textColor="@color/textSecondary"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 
         </ScrollView>
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Sidebar -->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView2"
+        android:id="@+id/navigationView1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
