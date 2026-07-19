@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -37,6 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView txtTotalSeconds;
     private TextView txtNextBirthdayDate;
     private TextView txtBirthdayCountdown;
+    private MaterialCardView heroCard;
 
 
     @Override
@@ -92,6 +97,7 @@ public class MainActivity2 extends AppCompatActivity {
         txtDays = findViewById(R.id.txtDays);
         txtNextBirthdayDate = findViewById(R.id.txtNextBirthdayDate);
         txtBirthdayCountdown = findViewById(R.id.txtBirthdayCountdown);
+        heroCard = findViewById(R.id.heroCard);
 
         txtYears.setText(String.valueOf(age.getYears()));
         txtMonths.setText(String.valueOf(age.getMonths()));
@@ -134,6 +140,12 @@ public class MainActivity2 extends AppCompatActivity {
         } else {
             txtBirthdayCountdown.setText(daysRemaining + " days remaining");
         }
+
+
+        Animation heroAnimation =
+                AnimationUtils.loadAnimation(this, R.anim.hero_card_enter);
+
+        heroCard.startAnimation(heroAnimation);
     }
 
     @Override
