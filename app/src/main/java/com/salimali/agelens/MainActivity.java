@@ -1,4 +1,4 @@
-package com.salimali.agecalculator;
+package com.salimali.agelens;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;

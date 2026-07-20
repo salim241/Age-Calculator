@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.salimali.agecalculator"
+    namespace = "com.salimali.agelens"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.salimali.agecalculator"
+        applicationId = "com.salimali.agelens"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

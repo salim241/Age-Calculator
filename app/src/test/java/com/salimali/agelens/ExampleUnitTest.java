@@ -1,4 +1,4 @@
-package com.salimali.agecalculator;
+package com.salimali.agelens;
 
 import org.junit.Test;
 

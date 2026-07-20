@@ -1,4 +1,4 @@
-package com.salimali.agecalculator;
+package com.salimali.agelens;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
