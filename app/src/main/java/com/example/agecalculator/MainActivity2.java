@@ -41,6 +41,14 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView txtTotalSeconds;
     private TextView txtNextBirthdayDate;
     private TextView txtBirthdayCountdown;
+    private Period age;
+
+    private long totalMonths;
+    private long totalWeeks;
+    private long totalDays;
+
+    private LocalDate nextBirthday;
+    private long daysRemaining;
 
     // Animatio variables
     private MaterialCardView heroCard;
@@ -72,23 +80,23 @@ public class MainActivity2 extends AppCompatActivity {
 
         LocalDate today = LocalDate.parse(currentDate, formatter);
 
-        LocalDate nextBirthday = birthDate.withYear(today.getYear());
+        nextBirthday = birthDate.withYear(today.getYear());
 
         if (nextBirthday.isBefore(today)) {
             nextBirthday = nextBirthday.plusYears(1);
         }
 
-        long daysRemaining = ChronoUnit.DAYS.between(today, nextBirthday);
+        daysRemaining = ChronoUnit.DAYS.between(today, nextBirthday);
 
         DateTimeFormatter birthdayFormatter =
                 DateTimeFormatter.ofPattern("dd MMMM yyyy");
 
 
-        Period age = Period.between(birthDate, today);
+        age = Period.between(birthDate, today);
 
-        long totalMonths = ChronoUnit.MONTHS.between(birthDate, today);
-        long totalWeeks = ChronoUnit.WEEKS.between(birthDate, today);
-        long totalDays = ChronoUnit.DAYS.between(birthDate, today);
+        totalMonths = ChronoUnit.MONTHS.between(birthDate, today);
+        totalWeeks = ChronoUnit.WEEKS.between(birthDate, today);
+        totalDays = ChronoUnit.DAYS.between(birthDate, today);
 
         long totalHours = totalDays * 24;
         long totalMinutes = totalHours * 60;
@@ -209,6 +217,35 @@ public class MainActivity2 extends AppCompatActivity {
                 .start();
     }
 
+    private void shareAgeDetails() {
+
+        String message =
+                "🎉 My Age Details\n\n" +
+
+                        "👤 Age\n" +
+                        age.getYears() + " Years, " +
+                        age.getMonths() + " Months, " +
+                        age.getDays() + " Days\n\n" +
+
+                        "📅 Total Age\n" +
+                        "• " + String.format("%,d", totalMonths) + " Months\n" +
+                        "• " + String.format("%,d", totalWeeks) + " Weeks\n" +
+                        "• " + String.format("%,d", totalDays) + " Days\n\n" +
+
+                        "🎂 Next Birthday\n" +
+                        nextBirthday.format(DateTimeFormatter.ofPattern("dd MMMM yyyy")) +
+                        "\n" +
+                        daysRemaining + " days remaining\n\n" +
+
+                        "📱 Generated using Age Calculator";
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+
+        startActivity(Intent.createChooser(intent, "Share via"));
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
@@ -225,8 +262,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         if (item.getItemId() == R.id.action_share) {
 
-            Toast.makeText(this, "Share feature coming soon!", Toast.LENGTH_SHORT).show();
-            return true;
+            shareAgeDetails();
         }
 
         return super.onOptionsItemSelected(item);
