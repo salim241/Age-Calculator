@@ -209,6 +209,20 @@
                     app:cornerRadius="18dp" />
 
 
+                <TextView
+                    android:id="@+id/txtFooter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Crafted with ❤️ by Salim Ali"
+                    android:textSize="12sp"
+                    android:textColor="@color/textSecondary"
+                    android:alpha="0.75"
+                    android:fontFamily="sans-serif-medium" />
+
+
             </LinearLayout>
         </ScrollView>
 
