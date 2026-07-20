@@ -38,6 +38,20 @@
     <string name="totalSeconds">327854928034089</string>
 
 
+    // share layout xml
+    <string name="shareCardImg">ShareCardHeroImg</string>
+    <string name="txtShareTitle">Age Calculator</string>
+    <string name="txtExactAge">Know Your Exact Age</string>
+    <string name="numShareYears">21</string>
+    <string name="txtShareYearLabel">YEARS</string>
+    <string name="txtShareCardSummary">21 Years • 10 Months • 19 Days</string>
+    <string name="txtShareCardNextBirthday">Next Birthday</string>
+    <string name="txtShareCardBirthday">30 August 2026</string>
+    <string name="txtShareCardCountdown">42 days remaining</string>
+    <string name="footerTextShareCard">Age Calculator</string>
+    <string name="txtShareCardMade">Made with ❤️ using</string>
+
+
     <string name="share2">Share</string>
     <string name="textview1">Date of birth</string>
     <string name="textview2">Calculate till</string>
@@ -45,5 +59,8 @@
     <string name="dobcalendar1">Calendar Icon1</string>
     <string name="dobcalendar2">Calendar Icon2</string>
     <string name="btnCalculateAgain">Calculate Again</string>
-        />
+
+
+
+    />
 </resources>
