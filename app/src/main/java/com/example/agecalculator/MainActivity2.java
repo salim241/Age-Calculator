@@ -1,11 +1,17 @@
 package com.example.agecalculator;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +25,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.FileProvider;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -217,33 +224,100 @@ public class MainActivity2 extends AppCompatActivity {
                 .start();
     }
 
-    private void shareAgeDetails() {
+    private void shareAgeCard() {
 
-        String message =
-                "🎉 My Age Details\n\n" +
+        LayoutInflater inflater = getLayoutInflater();
 
-                        "👤 Age\n" +
-                        age.getYears() + " Years, " +
-                        age.getMonths() + " Months, " +
-                        age.getDays() + " Days\n\n" +
+        View shareView = inflater.inflate(R.layout.share_layout, null);
 
-                        "📅 Total Age\n" +
-                        "• " + String.format("%,d", totalMonths) + " Months\n" +
-                        "• " + String.format("%,d", totalWeeks) + " Weeks\n" +
-                        "• " + String.format("%,d", totalDays) + " Days\n\n" +
+        TextView years = shareView.findViewById(R.id.txtShareYears);
+        TextView summary = shareView.findViewById(R.id.txtShareSummary);
+        TextView birthday = shareView.findViewById(R.id.txtShareBirthday);
+        TextView countdown = shareView.findViewById(R.id.txtShareCountdown);
 
-                        "🎂 Next Birthday\n" +
-                        nextBirthday.format(DateTimeFormatter.ofPattern("dd MMMM yyyy")) +
-                        "\n" +
-                        daysRemaining + " days remaining\n\n" +
+        years.setText(String.valueOf(age.getYears()));
 
-                        "📱 Generated using Age Calculator";
+        summary.setText(
+                age.getYears() + " Years • " +
+                        age.getMonths() + " Months\n •" +
+                        age.getDays() + " Days"
+        );
 
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, message);
+        birthday.setText(
+                nextBirthday.format(
+                        DateTimeFormatter.ofPattern("dd MMMM yyyy")
+                )
+        );
 
-        startActivity(Intent.createChooser(intent, "Share via"));
+        if (daysRemaining == 0) {
+            countdown.setText("🎉 Happy Birthday!");
+        } else {
+            countdown.setText(daysRemaining + " Days Remaining");
+        }
+
+        shareView.measure(
+                View.MeasureSpec.makeMeasureSpec(1080, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        );
+
+        shareView.layout(
+                0,
+                0,
+                shareView.getMeasuredWidth(),
+                shareView.getMeasuredHeight()
+        );
+
+        Bitmap bitmap = Bitmap.createBitmap(
+                shareView.getMeasuredWidth(),
+                shareView.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888
+        );
+
+        Canvas canvas = new Canvas(bitmap);
+
+        shareView.draw(canvas);
+
+        try {
+
+            File file = new File(getCacheDir(), "age_result.png");
+
+            FileOutputStream outputStream = new FileOutputStream(file);
+            Uri uri = FileProvider.getUriForFile(
+                    this,
+                    getPackageName() + ".provider",
+                    file
+            );
+
+            bitmap.compress(
+                    Bitmap.CompressFormat.PNG,
+                    100,
+                    outputStream
+            );
+
+            outputStream.flush();
+            outputStream.close();
+
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+
+            shareIntent.setType("image/png");
+
+            shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+
+            shareIntent.addFlags(
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+            );
+
+            startActivity(
+                    Intent.createChooser(
+                            shareIntent,
+                            "Share Age Card"
+                    )
+            );
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
@@ -261,8 +335,10 @@ public class MainActivity2 extends AppCompatActivity {
         }
 
         if (item.getItemId() == R.id.action_share) {
-
-            shareAgeDetails();
+            if (item.getItemId() == R.id.action_share) {
+                shareAgeCard();
+                return true;
+            }
         }
 
         return super.onOptionsItemSelected(item);
