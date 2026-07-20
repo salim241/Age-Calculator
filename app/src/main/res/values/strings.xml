@@ -59,7 +59,9 @@
     <string name="dobcalendar1">Calendar Icon1</string>
     <string name="dobcalendar2">Calendar Icon2</string>
     <string name="btnCalculateAgain">Calculate Again</string>
-
+    <string name="txtHomeScreen">Calculate Your\nExact Age</string>
+    <string name="txtHomeScreeSubTitle">Know your exact age in years,\nmonths, weeks, days and more.</string>
+    <string name="homeScreenFooterText">Crafted with ❤️ by Salim Ali</string>
 
 
     />
