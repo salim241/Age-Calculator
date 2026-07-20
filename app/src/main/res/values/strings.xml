@@ -3,10 +3,8 @@
     <string name="open_drawer">Open Navigation Drawer</string>
     <string name="close_drawer">Close Navigation Drawer</string>
 
-    <string name="open_drawer1">Open Navigation Drawer1</string>
-    <string name="close_drawer1">Close Navigation Drawer1</string>
-    <string name="imageView">Hero Image</string>
-    <string name="share1">Share</string>\
+
+
 
 
     <string name="ageTitle">Your Age Is</string>
@@ -38,6 +36,14 @@
     <string name="totalSeconds">327854928034089</string>
 
 
+    // MainActivity2.xml
+    <string name="open_drawer1">Open Navigation Drawer1</string>
+    <string name="close_drawer1">Close Navigation Drawer1</string>
+    <string name="imageView">Hero Image</string>
+    <string name="share1">Share</string>
+    <string name="resultCardImg">resultCardImg</string>
+
+
     // share layout xml
     <string name="shareCardImg">ShareCardHeroImg</string>
     <string name="txtShareTitle">Age Calculator</string>
@@ -62,6 +68,35 @@
     <string name="txtHomeScreen">Calculate Your\nExact Age</string>
     <string name="txtHomeScreeSubTitle">Know your exact age in years,\nmonths, weeks, days and more.</string>
     <string name="homeScreenFooterText">Crafted with ❤️ by Salim Ali</string>
+
+    <string name="titleResultCard">Your Exact Age</string>
+    <string name="numResultCard">21</string>
+    <string name="subTitleResultCard">YEARS</string>
+    <string name="summaryResultCard">21 years, 8 months and 17 days</string>
+    <string name="quoteResultCard">Celebrate every moment of your journey.</string>
+    <string name="txtTitleBreakdown">📅 Age Breakdown</string>
+    <string name="txtYearsBreakdown">Years</string>
+    <string name="ageInYearsBreakdown">21</string>
+    <string name="breakdownAgeInMonths">Months</string>
+    <string name="breakdownAgeInMonthsNum">8</string>
+    <string name="breakdownAgeInDays">Days</string>
+    <string name="breakdownAgeInDaysNum">17</string>
+    <string name="titleTotalAge">⏳ Total Age</string>
+    <string name="totalAgeMonths">Months</string>
+    <string name="totalAgeMonthsNum">0</string>
+    <string name="totalAgeInWeeks">Weeks</string>
+    <string name="totalAgeInDays">Days</string>
+    <string name="totalAgeInHours">Hours</string>
+    <string name="totalAgeInMinutes">Minutes</string>
+    <string name="totalAgeInSeconds">Seconds</string>
+    <string name="totalAgeInSecondsNum">0</string>
+    <string name="totalAgeInMinutesNum">0</string>
+    <string name="totalAgeInHoursNum">0</string>
+    <string name="totalAgeInDaysNum">0</string>
+    <string name="totalAgeInWeeksNum">0</string>
+    <string name="nextBirthdayTitle">🎂 Next Birthday</string>
+    <string name="nextBirthdayDate">30 August 2026</string>
+    <string name="nextBirthdayRemTime">42 days remaining</string>
 
 
     />
