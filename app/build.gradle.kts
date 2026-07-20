@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.agecalculator"
+        applicationId = "com.salimali.agecalculator"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
