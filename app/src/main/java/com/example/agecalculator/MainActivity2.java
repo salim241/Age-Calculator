@@ -17,42 +17,38 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    // Hero Card
     private TextView txtHeroTitle;
     private TextView txtHeroYears;
     private TextView txtHeroSummary;
+
+    // Age Breakdown
     private TextView txtYears;
     private TextView txtMonths;
     private TextView txtDays;
+
+    // Total Age
     private TextView txtTotalMonths;
     private TextView txtTotalWeeks;
     private TextView txtTotalDays;
     private TextView txtTotalHours;
     private TextView txtTotalMinutes;
     private TextView txtTotalSeconds;
+
+    // Next Birthday
     private TextView txtNextBirthdayDate;
     private TextView txtBirthdayCountdown;
     private Period age;
-
-    private long totalMonths;
-    private long totalWeeks;
-    private long totalDays;
 
     private LocalDate nextBirthday;
     private long daysRemaining;
@@ -101,9 +97,9 @@ public class MainActivity2 extends AppCompatActivity {
 
         age = Period.between(birthDate, today);
 
-        totalMonths = ChronoUnit.MONTHS.between(birthDate, today);
-        totalWeeks = ChronoUnit.WEEKS.between(birthDate, today);
-        totalDays = ChronoUnit.DAYS.between(birthDate, today);
+        long totalMonths = ChronoUnit.MONTHS.between(birthDate, today);
+        long totalWeeks = ChronoUnit.WEEKS.between(birthDate, today);
+        long totalDays = ChronoUnit.DAYS.between(birthDate, today);
 
         long totalHours = totalDays * 24;
         long totalMinutes = totalHours * 60;
@@ -119,7 +115,6 @@ public class MainActivity2 extends AppCompatActivity {
         txtBirthdayCountdown = findViewById(R.id.txtBirthdayCountdown);
 
 //        Animation
-        heroCard = findViewById(R.id.heroCard);
         heroCard = findViewById(R.id.heroCard);
         breakdownCard = findViewById(R.id.breakdownCard);
         totalAgeCard = findViewById(R.id.totalAgeCard);
