@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -310,7 +311,7 @@ public class MainActivity2 extends AppCompatActivity {
             );
 
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("ShareAgeCard", "Failed to share age card", e);
         }
 
     }
