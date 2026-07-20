@@ -7,11 +7,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.DatePickerDialog;
 import java.util.Calendar;
+import java.util.Locale;
 
 import com.google.android.material.appbar.MaterialToolbar;
-
-//import androidx.activity.EdgeToEdge;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,9 +20,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -125,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 (view, selectedYear, selectedMonth, selectedDay) -> {
 
                     String selectedDate = String.format(
+                            Locale.getDefault(),
                             "%02d/%02d/%04d",
                             selectedDay,
                             selectedMonth + 1,
@@ -156,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 (view, selectedYear, selectedMonth, selectedDay) -> {
 
                     String selectedDate = String.format(
+                            Locale.getDefault(),
                             "%02d/%02d/%04d",
                             selectedDay,
                             selectedMonth + 1,
@@ -181,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         int month = calendar.get(Calendar.MONTH) + 1;
         int year = calendar.get(Calendar.YEAR);
 
-        String today = String.format("%02d/%02d/%04d", day, month, year);
+        String today = String.format(Locale.getDefault(),"%02d/%02d/%04d", day, month, year);
 
         currentDate.setText(today);
     }
