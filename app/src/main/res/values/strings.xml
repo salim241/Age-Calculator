@@ -75,7 +75,7 @@
 
     // share layout xml
     <string name="shareCardImg">ShareCardHeroImg</string>
-    <string name="txtShareTitle">Age Calculator</string>
+    <string name="txtShareTitle">Age Summary</string>
     <string name="txtExactAge">Know Your Exact Age</string>
     <string name="numShareYears">21</string>
     <string name="txtShareYearLabel">YEARS</string>
