@@ -1,4 +1,4 @@
-package com.example.agecalculator;
+package com.salimali.agecalculator;
 
 import android.content.Context;
 

@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.agecalculator"
+    namespace = "com.salimali.agecalculator"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1

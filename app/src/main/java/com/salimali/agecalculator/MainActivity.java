@@ -1,4 +1,5 @@
-package com.example.agecalculator;
+package com.salimali.agecalculator;
+import com.example.agecalculator.R;
 import com.google.android.material.navigation.NavigationView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBarDrawerToggle;
