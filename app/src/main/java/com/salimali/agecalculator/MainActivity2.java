@@ -1,11 +1,4 @@
 package com.salimali.agecalculator;
-import com.example.agecalculator.R;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -19,13 +12,20 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
 
-
 import com.google.android.material.card.MaterialCardView;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class MainActivity2 extends AppCompatActivity {
 
